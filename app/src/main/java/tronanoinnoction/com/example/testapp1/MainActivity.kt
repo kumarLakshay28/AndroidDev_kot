@@ -15,18 +15,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn1.setOnClickListener {
-         Log.i("MainActivity", "Button was clicked")
-
-         Toast.makeText(this,"Button was clicked",Toast.LENGTH_SHORT).show()
-        }
-
         btn2.setOnClickListener {
             val message : String = Usermsg.text.toString()
-            Toast.makeText(this,message,Toast.LENGTH_LONG).show()
 
-            val intent= Intent(this,SecondActivity::class.java)
+            Toast.makeText(this,"you have been redirected", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("user message",message)
             startActivity(intent)
+
+
 
         }
 
