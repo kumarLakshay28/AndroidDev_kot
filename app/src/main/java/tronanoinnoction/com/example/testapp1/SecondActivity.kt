@@ -14,8 +14,6 @@ class SecondActivity : AppCompatActivity(){
         val bundle: Bundle? = intent.extras
         val newmsg=bundle!!.getString("user message")
 
-        Toast.makeText(this,newmsg,Toast.LENGTH_SHORT).show()
-
         viewbox1.text=newmsg
     }
 }

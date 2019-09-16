@@ -15,17 +15,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn2.setOnClickListener {
-            val message : String = Usermsg.text.toString()
+        button.setOnClickListener {
+            val msg: String = textbox.text.toString()
 
-            Toast.makeText(this,"you have been redirected", Toast.LENGTH_LONG).show()
+            val intent= Intent()
+            intent.action=Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT,msg)
+            intent.type="text/plain"
 
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("user message",message)
-            startActivity(intent)
-
-
-
+            startActivity(Intent.createChooser(intent,"Share with"))
         }
 
     }
