@@ -1,5 +1,6 @@
 package tronanoinnoction.com.example.testapp1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,15 @@ class MainActivity : AppCompatActivity() {
          Log.i("MainActivity", "Button was clicked")
 
          Toast.makeText(this,"Button was clicked",Toast.LENGTH_SHORT).show()
+        }
+
+        btn2.setOnClickListener {
+            val message : String = Usermsg.text.toString()
+            Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+
+            val intent= Intent(this,SecondActivity::class.java)
+            startActivity(intent)
+
         }
 
     }
